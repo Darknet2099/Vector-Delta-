@@ -1,0 +1,35 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    int z;
+    int value = 30;
+    int x = 0;
+    int y = 0;
+    int positirar = -1;
+    int[] vetor = new int[value];
+  
+    for( x = 0 ; x < vetor.length; x++){
+      vetor[x] = (int) (Math.random() * 100) + 1;
+      System.out.println(vetor[x]);
+    }
+    Scanner entrada = new Scanner(System.in);
+      System.out.print("Insira o valor que deseja remover=> ");
+         y = entrada.nextInt();
+    
+    for(x=0; x < vetor.length; x++){
+      if(vetor[x] == y){
+        positirar = x;
+      }
+    }
+      if(positirar == -1){
+        System.out.println("Valor não encontrado no vetor.");
+      }
+      if(positirar != -1){
+    for(z = positirar; z < vetor.length; z++);
+      vetor[z] = vetor[z+1];
+    }
+    value--;
+        System.out.print("Vetor após remover o valor " + positirar + ":");
+      
+  }
+}
